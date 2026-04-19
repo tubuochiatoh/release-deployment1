@@ -1,0 +1,25 @@
+apiVersion: karpenter.sh/v1
+kind: NodePool
+metadata:
+  name: t3a-nodepool
+spec:
+  template:
+    spec:
+      nodeClassRef:
+        name: bottlerocket
+
+      requirements:
+        - key: kubernetes.io/os
+          operator: In
+          values: ["linux"]
+
+        - key: kubernetes.io/arch
+          operator: In
+          values: ["amd64"]
+
+        - key: node.kubernetes.io/instance-type
+          operator: In
+          values: ["t3a.medium"]
+
+  limits:
+    cpu: "10"
