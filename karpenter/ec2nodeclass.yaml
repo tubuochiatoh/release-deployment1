@@ -7,6 +7,9 @@ spec:
 
   role: finishline-eks-node-role
 
+  amiSelectorTerms:
+    - alias: bottlerocket@latest
+
   subnetSelectorTerms:
     - tags:
         Name: "finishline-private-*"

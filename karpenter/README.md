@@ -20,3 +20,5 @@ This repo connects to:
 cd karpenter
 chmod +x install.sh
 ./install.sh
+
+#The jumphost IAM role required the AmazonElasticContainerRegistryPublicReadOnly policy to authenticate with Amazon ECR Public for Karpenter v1 Helm charts.
